@@ -5,7 +5,7 @@ import { ordersAPI } from '../api';
 import './Cart.css';
 
 const Cart = () => {
-  const { cart, loading, updateCartItem, removeFromCart, getCartTotal } = useCart();
+  const { cart, loading, updateCartItem, removeFromCart, getCartTotal, fetchCart } = useCart();
 
   const handleQuantityChange = async (id, newQuantity) => {
     if (newQuantity < 1) return;
@@ -32,7 +32,7 @@ const Cart = () => {
     try {
       await ordersAPI.createOrder();
       alert('Order placed successfully!');
-      // Cart will be cleared automatically by the backend
+      await fetchCart(); // Refresh cart to show it's empty
     } catch (error) {
       alert('Failed to place order');
     }

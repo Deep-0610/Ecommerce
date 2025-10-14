@@ -80,29 +80,25 @@ db.serialize(() => {
 
   // Populate products with Amazon-like data
   const sampleProducts = [
-    { name: 'iPhone 15 Pro', description: 'Latest Apple smartphone with advanced features', price: 999.99, category: 'Electronics', image_url: 'https://example.com/iphone15.jpg', stock: 50 },
-    { name: 'MacBook Air M3', description: 'Powerful laptop for professionals', price: 1299.99, category: 'Electronics', image_url: 'https://example.com/macbook.jpg', stock: 30 },
-    { name: 'The Great Gatsby', description: 'Classic novel by F. Scott Fitzgerald', price: 10.99, category: 'Books', image_url: 'https://example.com/gatsby.jpg', stock: 100 },
-    { name: 'Nike Air Max', description: 'Comfortable running shoes', price: 129.99, category: 'Clothing', image_url: 'https://example.com/nike.jpg', stock: 75 },
-    { name: 'Samsung 4K TV', description: 'Ultra HD television with smart features', price: 799.99, category: 'Electronics', image_url: 'https://example.com/samsungtv.jpg', stock: 20 },
-    { name: 'Harry Potter Series', description: 'Complete set of fantasy novels', price: 49.99, category: 'Books', image_url: 'https://example.com/harrypotter.jpg', stock: 60 },
-    { name: 'Levi\'s Jeans', description: 'Classic denim jeans', price: 59.99, category: 'Clothing', image_url: 'https://example.com/levis.jpg', stock: 80 },
-    { name: 'Sony Headphones', description: 'Noise-cancelling wireless headphones', price: 299.99, category: 'Electronics', image_url: 'https://example.com/sonyheadphones.jpg', stock: 40 },
-    { name: 'To Kill a Mockingbird', description: 'Award-winning novel by Harper Lee', price: 12.99, category: 'Books', image_url: 'https://example.com/mockingbird.jpg', stock: 90 },
-    { name: 'Adidas Sneakers', description: 'Stylish and comfortable sneakers', price: 89.99, category: 'Clothing', image_url: 'https://example.com/adidas.jpg', stock: 65 }
+    { name: 'iPhone 15 Pro', description: 'Latest Apple smartphone with advanced features', price: 999.99, category: 'Electronics', image_url: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400', stock: 50 },
+    { name: 'MacBook Air M3', description: 'Powerful laptop for professionals', price: 1299.99, category: 'Electronics', image_url: 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400', stock: 30 },
+    { name: 'The Great Gatsby', description: 'Classic novel by F. Scott Fitzgerald', price: 10.99, category: 'Books', image_url: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400', stock: 100 },
+    { name: 'Nike Air Max', description: 'Comfortable running shoes', price: 129.99, category: 'Clothing', image_url: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400', stock: 75 },
+    { name: 'Samsung 4K TV', description: 'Ultra HD television with smart features', price: 799.99, category: 'Electronics', image_url: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400', stock: 20 },
+    { name: 'Harry Potter Series', description: 'Complete set of fantasy novels', price: 49.99, category: 'Books', image_url: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400', stock: 60 },
+    { name: 'Levi\'s Jeans', description: 'Classic denim jeans', price: 59.99, category: 'Clothing', image_url: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=400', stock: 80 },
+    { name: 'Sony Headphones', description: 'Noise-cancelling wireless headphones', price: 299.99, category: 'Electronics', image_url: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400', stock: 40 },
+    { name: 'To Kill a Mockingbird', description: 'Award-winning novel by Harper Lee', price: 12.99, category: 'Books', image_url: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400', stock: 90 },
+    { name: 'Adidas Sneakers', description: 'Stylish and comfortable sneakers', price: 89.99, category: 'Clothing', image_url: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=400', stock: 65 }
   ];
 
-  // Insert sample products if not exists
-  const stmt = db.prepare(`
-    INSERT OR IGNORE INTO products (name, description, price, category, image_url, stock)
-    VALUES (?, ?, ?, ?, ?, ?)
-  `);
-
+  // Insert or update sample products
   sampleProducts.forEach(product => {
-    stmt.run(product.name, product.description, product.price, product.category, product.image_url, product.stock);
+    db.run(`
+      INSERT OR REPLACE INTO products (name, description, price, category, image_url, stock)
+      VALUES (?, ?, ?, ?, ?, ?)
+    `, [product.name, product.description, product.price, product.category, product.image_url, product.stock]);
   });
-
-  stmt.finalize();
 
   console.log('Database schema created and sample data inserted.');
 });

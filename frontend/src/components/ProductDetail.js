@@ -61,7 +61,7 @@ const ProductDetail = () => {
           <h1>{product.name}</h1>
           <p className="product-category">Category: {product.category}</p>
           <p className="product-description">{product.description}</p>
-          <p className="product-price">${product.price}</p>
+          <p className="product-price">₹{product.price}</p>
           <p className={`product-stock ${product.stock === 0 ? 'out-of-stock' : ''}`}>
             Stock: {product.stock}
           </p>

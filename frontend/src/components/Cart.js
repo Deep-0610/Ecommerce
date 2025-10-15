@@ -63,7 +63,7 @@ const Cart = () => {
               <img src={item.image_url} alt={item.name} className="cart-item-image" />
               <div className="cart-item-info">
                 <h3>{item.name}</h3>
-                <p className="cart-item-price">${item.price}</p>
+                <p className="cart-item-price">₹{item.price}</p>
               </div>
               <div className="cart-item-controls">
                 <div className="quantity-controls">
@@ -89,7 +89,7 @@ const Cart = () => {
                 </button>
               </div>
               <div className="cart-item-total">
-                ${(item.price * item.quantity).toFixed(2)}
+                ₹{(item.price * item.quantity).toFixed(2)}
               </div>
             </div>
           ))}
@@ -99,11 +99,11 @@ const Cart = () => {
           <h2>Order Summary</h2>
           <div className="summary-row">
             <span>Subtotal ({cart.length} items):</span>
-            <span>${getCartTotal().toFixed(2)}</span>
+            <span>₹{getCartTotal().toFixed(2)}</span>
           </div>
           <div className="summary-row total">
             <span>Total:</span>
-            <span>${getCartTotal().toFixed(2)}</span>
+            <span>₹{getCartTotal().toFixed(2)}</span>
           </div>
           <button onClick={handleCheckout} className="checkout-btn">
             Proceed to Checkout

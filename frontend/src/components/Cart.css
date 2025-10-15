@@ -39,6 +39,7 @@
   height: 80px;
   object-fit: cover;
   border-radius: 4px;
+  display: block;
 }
 
 .cart-item-info h3 {

@@ -46,7 +46,7 @@ const Home = () => {
               <div className="product-info">
                 <h3>{product.name}</h3>
                 <p className="product-description">{product.description}</p>
-                <p className="product-price">${product.price}</p>
+                <p className="product-price">₹{product.price}</p>
                 <Link to={`/products/${product.id}`} className="view-product-btn">
                   View Product
                 </Link>

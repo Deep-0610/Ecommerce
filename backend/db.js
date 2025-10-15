@@ -78,18 +78,18 @@ db.serialize(() => {
     )
   `);
 
-  // Populate products with Amazon-like data
+  // Populate products with Amazon-like data (prices in INR)
   const sampleProducts = [
-    { name: 'iPhone 15 Pro', description: 'Latest Apple smartphone with advanced features', price: 999.99, category: 'Electronics', image_url: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400', stock: 50 },
-    { name: 'MacBook Air M3', description: 'Powerful laptop for professionals', price: 1299.99, category: 'Electronics', image_url: 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400', stock: 30 },
-    { name: 'The Great Gatsby', description: 'Classic novel by F. Scott Fitzgerald', price: 10.99, category: 'Books', image_url: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400', stock: 100 },
-    { name: 'Nike Air Max', description: 'Comfortable running shoes', price: 129.99, category: 'Clothing', image_url: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400', stock: 75 },
-    { name: 'Samsung 4K TV', description: 'Ultra HD television with smart features', price: 799.99, category: 'Electronics', image_url: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400', stock: 20 },
-    { name: 'Harry Potter Series', description: 'Complete set of fantasy novels', price: 49.99, category: 'Books', image_url: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400', stock: 60 },
-    { name: 'Levi\'s Jeans', description: 'Classic denim jeans', price: 59.99, category: 'Clothing', image_url: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=400', stock: 80 },
-    { name: 'Sony Headphones', description: 'Noise-cancelling wireless headphones', price: 299.99, category: 'Electronics', image_url: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400', stock: 40 },
-    { name: 'To Kill a Mockingbird', description: 'Award-winning novel by Harper Lee', price: 12.99, category: 'Books', image_url: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400', stock: 90 },
-    { name: 'Adidas Sneakers', description: 'Stylish and comfortable sneakers', price: 89.99, category: 'Clothing', image_url: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=400', stock: 65 }
+    { name: 'iPhone 15 Pro', description: 'Latest Apple smartphone with advanced features', price: 82999.17, category: 'Electronics', image_url: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400', stock: 50 },
+    { name: 'MacBook Air M3', description: 'Powerful laptop for professionals', price: 107899.17, category: 'Electronics', image_url: 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400', stock: 30 },
+    { name: 'The Great Gatsby', description: 'Classic novel by F. Scott Fitzgerald', price: 911.17, category: 'Books', image_url: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400', stock: 100 },
+    { name: 'Nike Air Max', description: 'Comfortable running shoes', price: 10749.17, category: 'Clothing', image_url: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400', stock: 75 },
+    { name: 'Samsung 4K TV', description: 'Ultra HD television with smart features', price: 66399.17, category: 'Electronics', image_url: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400', stock: 20 },
+    { name: 'Harry Potter Series', description: 'Complete set of fantasy novels', price: 4149.17, category: 'Books', image_url: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400', stock: 60 },
+    { name: 'Levi\'s Jeans', description: 'Classic denim jeans', price: 4979.17, category: 'Clothing', image_url: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=400', stock: 80 },
+    { name: 'Sony Headphones', description: 'Noise-cancelling wireless headphones', price: 24899.17, category: 'Electronics', image_url: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400', stock: 40 },
+    { name: 'To Kill a Mockingbird', description: 'Award-winning novel by Harper Lee', price: 1077.17, category: 'Books', image_url: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400', stock: 90 },
+    { name: 'Adidas Sneakers', description: 'Stylish and comfortable sneakers', price: 7459.17, category: 'Clothing', image_url: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=400', stock: 65 }
   ];
 
   // Insert or update sample products
